@@ -68,40 +68,63 @@
       color: #a8b2d1;
     }
 
-    .projects {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 25px;
+    .timeline {
+      border-left: 3px solid var(--accent);
+      margin-left: 10px;
+      padding-left: 20px;
     }
 
-    .card {
-      background: var(--card-bg);
-      border-radius: 12px;
-      padding: 25px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    .timeline-item {
+      margin-bottom: 25px;
     }
 
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 6px 16px rgba(0,0,0,0.4);
-    }
-
-    .card h3 {
+    .timeline-item h4 {
       color: var(--accent);
-      margin-bottom: 10px;
+      margin-bottom: 5px;
     }
 
-    .card p {
+    .timeline-item p {
       color: #a8b2d1;
-      margin-bottom: 15px;
       font-size: 0.95rem;
     }
 
-    .card a {
-      color: var(--primary);
+    .cert-list li {
+      color: #a8b2d1;
+      margin-bottom: 8px;
+    }
+
+    .cert-list a {
+      color: var(--accent);
       text-decoration: none;
-      font-weight: 500;
+    }
+
+    /* SKILL BARS */
+    .skill {
+      margin-bottom: 20px;
+    }
+
+    .skill-name {
+      margin-bottom: 5px;
+      color: #a8b2d1;
+    }
+
+    .skill-bar {
+      background: #233554;
+      border-radius: 10px;
+      overflow: hidden;
+      height: 12px;
+    }
+
+    .skill-progress {
+      height: 100%;
+      background: var(--accent);
+      width: 0;
+      animation: grow 2s forwards;
+    }
+
+    @keyframes grow {
+      from { width: 0; }
+      to { width: var(--width); }
     }
 
     .contact {
@@ -112,6 +135,23 @@
     .contact a {
       color: var(--accent);
       text-decoration: none;
+    }
+
+    .resume-btn {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 12px 25px;
+      background-color: var(--accent);
+      color: #0a192f;
+      border-radius: 8px;
+      font-weight: bold;
+      text-decoration: none;
+      transition: 0.3s ease;
+    }
+
+    .resume-btn:hover {
+      background-color: #52e0c4;
+      transform: translateY(-3px);
     }
 
     footer {
@@ -141,29 +181,71 @@
     <section>
       <h2>About Me</h2>
       <p class="about">
-        I’m a passionate data science professional with a deep interest in turning data into actionable insights. 
-        Skilled in Python, machine learning, and AI-driven analytics, I aim to build intelligent solutions that make a real-world impact. 
-        Currently exploring advanced data modeling, GenAI applications, and predictive analytics.
+        Passionate Data Scientist with expertise in machine learning, AI, and data visualization. 
+        Focused on solving real-world problems with data-driven solutions and continuous learning.
       </p>
     </section>
 
     <section>
-      <h2>Featured Projects</h2>
-      <div class="projects">
-
-        <div class="card">
-          <h3>🚗 Ford Car Pricing Dataset</h3>
-          <p>Performed EDA and regression modeling to identify factors influencing car pricing using advanced ML techniques.</p>
-          <a href="https://github.com/tonumayworkspace-creator/Ford-Car-Pricing-Dataset" target="_blank">🔗 View on GitHub</a>
+      <h2>Qualification & Experience</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <h4>🎓 MCA (Data Science Specialization) — Sikkim Manipal University</h4>
+          <p>2025 (Pursuing)</p>
         </div>
-
-        <div class="card">
-          <h3>🚀 SpaceX Falcon 9 Landing Prediction</h3>
-          <p>Developed classification models to predict successful Falcon 9 landings using logistic regression, decision trees, and SVMs.</p>
-          <a href="https://github.com/tonumayworkspace-creator/SpaceX-Falcon-9-first-stage-Landing-Prediction-Project" target="_blank">🔗 View on GitHub</a>
+        <div class="timeline-item">
+          <h4>🎓 BCA — Completed in 2017</h4>
+          <p>Strong foundation in programming, algorithms, and databases.</p>
         </div>
-
+        <div class="timeline-item">
+          <h4>💼 Data Science Trainee — Topmentor & Coursera</h4>
+          <p>Worked on real-world data cleaning, visualization, and predictive modeling projects.</p>
+        </div>
       </div>
+    </section>
+
+    <section>
+      <h2>Certifications</h2>
+      <ul class="cert-list">
+        <li>📜 Professional Certificate in Data Science — Coursera</li>
+        <li>📜 Machine Learning Foundations — Topmentor</li>
+        <li>📜 SQL for Data Science — Coursera</li>
+        <li>📜 Python for Data Analysis — Coursera</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Skills</h2>
+      <div class="skills">
+        <div class="skill">
+          <div class="skill-name">Python</div>
+          <div class="skill-bar"><div class="skill-progress" style="--width: 90%;"></div></div>
+        </div>
+        <div class="skill">
+          <div class="skill-name">Machine Learning</div>
+          <div class="skill-bar"><div class="skill-progress" style="--width: 85%;"></div></div>
+        </div>
+        <div class="skill">
+          <div class="skill-name">SQL</div>
+          <div class="skill-bar"><div class="skill-progress" style="--width: 80%;"></div></div>
+        </div>
+        <div class="skill">
+          <div class="skill-name">Power BI</div>
+          <div class="skill-bar"><div class="skill-progress" style="--width: 75%;"></div></div>
+        </div>
+        <div class="skill">
+          <div class="skill-name">TensorFlow & Scikit-Learn</div>
+          <div class="skill-bar"><div class="skill-progress" style="--width: 70%;"></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Projects</h2>
+      <ul class="cert-list">
+        <li>🚗 <a href="https://github.com/tonumayworkspace-creator/Ford-Car-Pricing-Dataset" target="_blank">Ford Car Pricing Dataset</a></li>
+        <li>🚀 <a href="https://github.com/tonumayworkspace-creator/SpaceX-Falcon-9-first-stage-Landing-Prediction-Project" target="_blank">SpaceX Falcon 9 Landing Prediction</a></li>
+      </ul>
     </section>
 
     <section>
@@ -172,6 +254,9 @@
         <p>📧 <a href="mailto:tonumaybhattacharya@gmail.com">tonumaybhattacharya@gmail.com</a></p>
         <p>💼 <a href="https://www.linkedin.com/in/tonumay-bhattacharya-049887365/" target="_blank">LinkedIn Profile</a></p>
         <p>💻 <a href="https://github.com/tonumayworkspace-creator" target="_blank">GitHub Profile</a></p>
+
+        <!-- Resume Button -->
+        <a href="Tonumay_Bhattacharya_Resume.pdf" class="resume-btn" download>⬇️ Download Resume</a>
       </div>
     </section>
   </main>
